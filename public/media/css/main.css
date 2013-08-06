@@ -8,3 +8,8 @@ body {
 .navbar-inner {
   background-image: linear-gradient(to bottom,#ddd,#d1d1d1);
 }
+
+div.addthis_toolbox {
+  width:300px;
+  margin: 5 auto;
+}

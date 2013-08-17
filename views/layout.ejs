@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title><%= bolt %><%= title %> Junior game developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Silvery and sleek.">
+    <meta name="author" content="Thomas Park">
+    <!-- Stylesheets -->
+    <link href="./media/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./media/lib/bootstrap/css/bootswatch.css" rel="stylesheet">
+    <link href="./media/css/main.css" rel="stylesheet">
+
+    <!-- JS libs -->
+    <script src="./media/lib/jquery-2.0.2.min.js"></script>
+    <script src="./media/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./media/lib/signals.min.js"></script>
+    <script src="./media/js/controller.js"></script>
+    <!-- Project -->
+    <script src="./media/js/main.js"></script>
+
+    <!-- AddThis Button END -->
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520055ed5a8fdbb3"></script>
+  </head>
+
+  <body class="preview" id="top" >
+    <!-- Navbar ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="container">
+        <a href="../" class="navbar-brand">Dashboard</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="nav-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/games/">New Games</a>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="themes">
+                <li><a href="../default/">Default</a></li>
+                <li class="divider"></li>
+                <li><a href="../amelia/">Amelia</a></li>
+                <li><a href="../cerulean/">Cerulean</a></li>
+                <li><a href="../cosmo/">Cosmo</a></li>
+                <li><a href="../cyborg/">Cyborg</a></li>
+                <li><a href="../flatly/">Flatly</a></li>
+                <li><a href="../journal/">Journal</a></li>
+                <li><a href="../readable/">Readable</a></li>
+                <li><a href="../simplex/">Simplex</a></li>
+                <li><a href="../slate/">Slate</a></li>
+                <li><a href="../spacelab/">Spacelab</a></li>
+                <li><a href="../superhero/">Superhero</a></li>
+                <li><a href="../united/">United</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Download <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="download">
+                <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
+                <li><a href="./bootstrap.css">bootstrap.css</a></li>
+                <li class="divider"></li>
+                <li><a href="./variables.less">variables.less</a></li>
+                <li><a href="./bootswatch.less">bootswatch.less</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="../help/">Help</a>
+            </li>
+            <li>
+              <a href="http://news.bootswatch.com">Blog</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav pull-right">
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <%- body %>
+    </div><!-- /container -->
+
+    <!-- Footer ================================================== -->
+    <hr>
+
+    <footer>
+      <div class="row">
+        <div class="col-lg-12">
+          
+          <ul class="list-unstyled">
+            <li class="pull-right"><a href="#top">Back to top</a></li>
+            <li><a href="http://news.bootswatch.com" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
+            <li><a href="http://feeds.feedburner.com/bootswatch">RSS</a></li>
+            <li><a href="https://twitter.com/thomashpark">Twitter</a></li>
+            <li><a href="https://github.com/thomaspark/bootswatch/">GitHub</a></li>
+            <li><a href="../help/#api">API</a></li>
+            <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=F22JEM3Q78JC2">Donate</a></li>
+          </ul>
+          <p>Made by <a href="http://thomaspark.me">Thomas Park</a>. Contact him at <a href="mailto:hello@thomaspark.me">hello@thomaspark.me</a>.</p>
+          <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>.</p>
+          <p>Based on <a href="http://getbootstrap.com">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts">Google</a>. Favicon by <a href="https://twitter.com/geraldhiller">Gerald Hiller</a>.</p>
+
+        </div>
+      </div>
+    </footer>
+    <!-- Le javascript ================================================== -->
+  </body>
+</html>

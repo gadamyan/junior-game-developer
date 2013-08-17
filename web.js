@@ -24,7 +24,7 @@ app.engine('html', ejs.renderFile);
 app.set('view engine', 'ejs');
 app.set('layout', 'layout');
 app.use(expressLayout);
-app.set('view options', {bolt: 'bolt'});
+//app.set('view options', {bolt: 'bolt'});
 app.use(express.favicon());
 app.use(express.logger());
 //app.use(express.logger('dev'));

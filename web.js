@@ -24,7 +24,6 @@ app.engine('html', ejs.renderFile);
 app.set('view engine', 'ejs');
 app.set('layout', 'layout');
 app.use(expressLayout);
-//app.set('view options', {bolt: 'bolt'});
 app.use(express.favicon());
 app.use(express.logger());
 //app.use(express.logger('dev'));
@@ -34,10 +33,7 @@ app.use(app.router);
 app.use(require('less-middleware')({ src: __dirname + '/public' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-var hostname = require('os').hostname();
-if (app.get('port') != 80) {
-  hostname += ':' + app.get('port');
-}
+//app.set('view options', {SITE_URL: hostname});
 
 // development only
 //if ('development' == app.get('env')) {

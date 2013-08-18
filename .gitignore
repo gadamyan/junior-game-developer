@@ -1,6 +1,7 @@
 # Heroku environmental variables, including API keys.
 # https://devcenter.heroku.com/articles/config-vars
 .env
+.pgpass
 
 # npm packages
 # node_modules
@@ -8,3 +9,6 @@
 # Vim
 *~
 *.swp
+
+pgsetup.sh
+setup-ssjs.sh

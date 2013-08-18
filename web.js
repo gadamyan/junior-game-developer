@@ -3,11 +3,13 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
-var games = require('./routes/games');
-var ejs = require('ejs');
-var path = require('path');
-var expressLayout = require('express3-ejs-layout');
+var async   = require('async');
+var ejs     = require('ejs');
+var path    = require('path');
+var layout  = require('express3-ejs-layout');
+var routes  = require('./routes');
+var games   = require('./routes/games');
+var db      = require('./models');
 
 var app = express();
 
@@ -23,7 +25,7 @@ app.set('views', __dirname + '/views');
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'ejs');
 app.set('layout', 'layout');
-app.use(expressLayout);
+app.use(layout);
 app.use(express.favicon());
 app.use(express.logger());
 //app.use(express.logger('dev'));
@@ -43,6 +45,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', routes.index);
 app.get('/games', games.list);
 
-app.listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + app.get('port'));
+
+// sync the database and start the server
+db.sequelize.sync().complete(function(err) {
+  if (err) {
+    throw err;
+  } else {
+    app.listen(app.get('port'), function() {
+      console.log('Express server listening on port ' + app.get('port'));
+    });
+  }
 });

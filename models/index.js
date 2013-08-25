@@ -1,3 +1,22 @@
+var createModules = function(sequelize, DataTypes) {
+  var User = sequelize.define("user", {
+    name: {type: DataTypes.STRING(255), allowNull: false},
+    email: {type: DataTypes.STRING(255), allowNull: false},
+    birthday: {type: DataTypes.DATE, allowNull: false}
+  });
+
+  var Game = sequelize.define("game", {
+    name: {type: DataTypes.STRING(255), allowNull: false},
+    author: {type: DataTypes.STRING(255), allowNull: false},
+    image_url: {type: DataTypes.STRING(255), allowNull: false},
+    data_creation: {type: DataTypes.DATE, allowNull: false}
+  }).hasOne(User);
+
+  global.db['user'] = User;
+  global.db['game'] = Game;
+};
+
+
 if (!global.hasOwnProperty('db')) {
     var Sequelize = require('sequelize');
     var sq = null;
@@ -47,7 +66,8 @@ if (!global.hasOwnProperty('db')) {
     global.db = {
         Sequelize: Sequelize,
         sequelize: sq,
-        order: sq.import(__dirname + '/order')
+        //order: sq.import(__dirname + '/order')
     };
+    createModules(sq, Sequelize);
 }
 module.exports = global.db;

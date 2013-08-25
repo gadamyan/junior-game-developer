@@ -10,7 +10,8 @@ var createModules = function(sequelize, DataTypes) {
     author: {type: DataTypes.STRING(255), allowNull: false},
     image_url: {type: DataTypes.STRING(255), allowNull: false},
     data_creation: {type: DataTypes.DATE, allowNull: false}
-  }).hasOne(User);
+  });
+  Game.belongsTo(User);
 
   global.db['user'] = User;
   global.db['game'] = Game;
@@ -39,6 +40,7 @@ if (!global.hasOwnProperty('db')) {
             protocol: 'postgres',
             port:     port,
             host:     host,
+            sync:     { force: true },
             logging:  true //false
         };
         sq = new Sequelize(dbname, user, password, config);

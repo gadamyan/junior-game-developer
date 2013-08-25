@@ -2,16 +2,18 @@ var createModules = function(sequelize, DataTypes) {
   var User = sequelize.define("user", {
     name: {type: DataTypes.STRING(255), allowNull: false},
     email: {type: DataTypes.STRING(255), allowNull: false},
+    male: {type: DataTypes.BOOLEAN, allowNull: false},
     birthday: {type: DataTypes.DATE, allowNull: false}
   });
 
   var Game = sequelize.define("game", {
     name: {type: DataTypes.STRING(255), allowNull: false},
     author: {type: DataTypes.STRING(255), allowNull: false},
-    image_url: {type: DataTypes.STRING(255), allowNull: false},
-    data_creation: {type: DataTypes.DATE, allowNull: false}
+    imageUrl: {type: DataTypes.STRING(255), allowNull: false},
+    dateCreation: {type: DataTypes.DATE, allowNull: false}
   });
   Game.belongsTo(User);
+  User.hasMany(Game);
 
   global.db['user'] = User;
   global.db['game'] = Game;

@@ -7,8 +7,8 @@ var async   = require('async');
 var ejs     = require('ejs');
 var path    = require('path');
 var layout  = require('express3-ejs-layout');
-var routes  = require('./routes');
-var games   = require('./routes/games');
+var routes  = require('./routes/routes');
+var api     = require('./api/api');
 var db      = require('./models');
 
 var app = express();
@@ -43,7 +43,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //}
 
 app.get('/', routes.index);
-app.get('/games', games.list);
+app.get('/game/list/', routes.games);
+app.get('/api/game/list/', api.games);
 
 
 // sync the database and start the server

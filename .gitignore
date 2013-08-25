@@ -10,5 +10,4 @@
 *~
 *.swp
 
-pgsetup.sh
-setup-ssjs.sh
+*.sh

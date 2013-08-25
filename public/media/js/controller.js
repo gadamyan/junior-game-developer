@@ -19,26 +19,35 @@ var Controller;
     constructor: _Controller,
 
     init: function() {
-      var page = History.getHash(),
+      var page = History.getHashByState(),
           v = page.split('/'),
           action = '';
+      if ("" == v[0]) {
+        v.splice(0, 1);
+      }
       if ("" == v[v.length - 1]) {
         v.splice(v.length - 1);
       }
       if (v.length > 0) {
         action = v[0] + v[1].substr(0, 1).toUpperCase()
                + v[1].substr(1) + "Action";
-        if ("undefined" != typeof Controller[action]) {
+        if ("undefined" != typeof this[action]) {
           if (v.length > 2) {
-            Controller[action].apply(Controller, v.slice(2));
+            this[action].apply(this, v.slice(2));
           } else {
-            Controller[action]();
+            this[action]();
           }
         }
+      } else {
+        this.indexAjaxAction();
       }
     },
 
     indexAjaxAction: function() {
+    },
+
+    gameListAction: function() {
+      Game.list();
     }
   }
 

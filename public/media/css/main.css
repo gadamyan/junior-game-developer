@@ -3,13 +3,11 @@ body {
   font-size: 16px;
   color: #333;
   background-color: #ffffff;
+  padding-top:40px;
 }
-
-.navbar-inner {
-  background-image: linear-gradient(to bottom,#ddd,#d1d1d1);
-}
-
 div.addthis_toolbox {
-  width:350px;
+  width:300px;
   margin: 5 auto;
 }
+#banner{border-bottom:0}
+.navbar {background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(50%, #eeeeee), to(#e4e4e4));}

@@ -44,6 +44,7 @@ var Controller;
     },
 
     indexAjaxAction: function() {
+      Dashboard.init();
     },
 
     gameListAction: function() {

@@ -49,6 +49,10 @@ var Controller;
 
     gameListAction: function() {
       Game.list();
+    },
+
+    gameAddAction: function() {
+      Game.add();
     }
   }
 

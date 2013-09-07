@@ -10,7 +10,10 @@ var createModules = function(sequelize, DataTypes) {
     name: {type: DataTypes.STRING(255), allowNull: false},
     author: {type: DataTypes.STRING(255), allowNull: false},
     imageUrl: {type: DataTypes.STRING(255), allowNull: false},
-    dateCreation: {type: DataTypes.DATE, allowNull: false}
+    downloadLink: {type: DataTypes.STRING(255), allowNull: false},
+    platform: {type: DataTypes.STRING(255), allowNull: false},
+    description: {type: DataTypes.TEXT, allowNull: false},
+    //dateCreation: {type: DataTypes.DATE, allowNull: false}
   });
   Game.belongsTo(User);
   User.hasMany(Game);

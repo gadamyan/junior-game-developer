@@ -39,6 +39,48 @@ var Game;
         var game_template = $('script#game-template').tmpl(data);
         game_list.append(game_template);
       });
+    },
+
+    add: function() {
+      var self = this,
+          form = $('#add-game-form'),
+          addButton = form.find('.btn-success');
+
+      addButton.click(function() {
+        var form = $('#add-game-form'),
+            name = form.find('[name = name]'),
+            author = form.find('[name = author]'),
+            image = form.find('[name = image]'),
+            link = form.find('[name = link]'),
+            platform = form.find('[name = platform]'),
+            description = form.find('[name = description]');
+        var post = {
+          name: name.val(),
+          author: author.val(),
+          image: image.val(),
+          link: link.val(),
+          platform: platform.val(),
+          description: description.val()
+        };
+        self.game_add(post, function() {});
+      });
+    },
+
+    game_add: function(post, fn) {
+      $.ajax({
+        url: '/api/game/list/',
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(post),
+        contentType: 'application/json',
+        processData: false,
+        success: function(data) {
+          if ('undefined' !== typeof fn) {
+            fn.apply(self, [data]);
+          }
+        },
+        //statusCode: status
+      });
     }
   }
 

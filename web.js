@@ -16,7 +16,7 @@ var app = express();
 // all environments
 
 //app.configure('dev', function() {
-  //app.set('view cache', true);
+//  app.set('view cache', true);
 //});
 
 app.set('port', process.env.PORT || 8080);
@@ -39,12 +39,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 //if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+//  app.use(express.errorHandler());
 //}
 
 app.get('/', routes.index);
-app.get('/game/list/', routes.games);
-app.get('/api/game/list/', api.games);
+app.get('/game/list/', routes.game.list);
+app.get('/game/add/', routes.game.add);
+app.get('/api/game/list/', api.game.list);
+app.post('/api/game/add/', api.game.add);
 
 
 // sync the database and start the server

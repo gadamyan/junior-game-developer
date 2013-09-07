@@ -68,7 +68,7 @@ var Game;
 
     game_add: function(post, fn) {
       $.ajax({
-        url: '/api/game/list/',
+        url: '/api/game/add/',
         type: 'POST',
         dataType: 'json',
         data: JSON.stringify(post),

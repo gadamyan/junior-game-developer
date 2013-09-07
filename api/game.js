@@ -8,7 +8,7 @@ exports.list = function(req, res) {
 };
 
 exports.add = function(req, res) {
-  var game_instance = global.db.game.build({
+  var obj = {
     name:         req.body.name,
     author:       req.body.author,
     imageUrl:     req.body.imageUrl,
@@ -16,10 +16,11 @@ exports.add = function(req, res) {
     platform:     req.body.platform,
     description:  req.body.description,
     //dateCreation: req.body.dateCreation
-  });
+  };
+  var game_instance = global.db.game.build(obj);
   game_instance.save().success(function() {
     res.redirect("/game/list");
   }).error(function(err) {
-    res.send("error");
+    res.send(err);
   });
 };

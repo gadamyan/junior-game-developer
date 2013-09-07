@@ -20,11 +20,8 @@ var Dashboard;
 
     init: function(data) {
       Game.game_list(function(data) {
-        console.log(data);
         var game_list = $('#games-list');
         var game_template = $('script#game-template').tmpl(data);
-        console.log(game_list);
-        console.log(game_template);
         game_list.append(game_template);
       });
     }

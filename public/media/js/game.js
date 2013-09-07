@@ -50,15 +50,15 @@ var Game;
         var form = $('#add-game-form'),
             name = form.find('[name = name]'),
             author = form.find('[name = author]'),
-            image = form.find('[name = imageUrl]'),
-            link = form.find('[name = downloadLink]'),
+            imageUrl = form.find('[name = imageUrl]'),
+            downloadLink = form.find('[name = downloadLink]'),
             platform = form.find('[name = platform]'),
             description = form.find('[name = description]');
         var post = {
           name: name.val(),
           author: author.val(),
-          image: image.val(),
-          link: link.val(),
+          imageUrl: imageUrl.val(),
+          downloadLink: downloadLink.val(),
           platform: platform.val(),
           description: description.val()
         };

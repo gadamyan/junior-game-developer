@@ -62,7 +62,9 @@ var Game;
           platform: platform.val(),
           description: description.val()
         };
-        self.game_add(post, function() {});
+        self.game_add(post, function(data) {
+          location.replace('/game/list/');
+        });
       });
     },
 

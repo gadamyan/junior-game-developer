@@ -9,12 +9,11 @@ exports.list = function(req, res) {
         downloadLink: game.downloadLink,
         platform:     game.platform,
         description:  game.description,
-        //dateCreation: req.body.dateCreation
       });
     });
     res.send(games_json);
   }).error(function(err) {
-    res.send(err);
+    res.error(err);
   });
 };
 
@@ -30,8 +29,8 @@ exports.add = function(req, res) {
   };
   var game_instance = global.db.game.build(obj);
   game_instance.save().success(function() {
-    res.redirect("/game/list");
+    res.send("succes");
   }).error(function(err) {
-    res.send(err);
+    res.error(err);
   });
 };

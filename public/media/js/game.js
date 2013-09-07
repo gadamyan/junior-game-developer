@@ -76,12 +76,13 @@ var Game;
         data: JSON.stringify(post),
         contentType: 'application/json',
         processData: false,
-        success: function(data) {
-          if ('undefined' !== typeof fn) {
-            fn.apply(self, [data]);
+        statusCode: {
+          200: function(data) {
+            if ('undefined' !== typeof fn) {
+              fn.apply(self, [data]);
+            }
           }
-        },
-        //statusCode: status
+        }
       });
     }
   }

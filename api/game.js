@@ -8,7 +8,7 @@ exports.list = function(req, res) {
 };
 
 exports.add = function(req, res) {
-  var gam_instance = global.db.Game.build({
+  var gam_instance = global.db.game.build({
     name:         req.body.name,
     author:       req.body.author,
     imageUrl:     req.body.imageUrl,

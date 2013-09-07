@@ -14,8 +14,7 @@ exports.list = function(req, res) {
     });
     res.send(games_json);
   }).error(function(err) {
-    console.log(err);
-    response.send(err);
+    res.send(err);
   });
 };
 
